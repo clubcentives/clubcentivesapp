@@ -9,7 +9,11 @@ var starttime = getSeconds();
 var mintime = 5000;
 
 $(function() {
-                      	
+          
+    if (window.location.href.indexOf('noconnect') > 0) {
+    	return true;
+    }
+                	
 	$.ajax({
 		url: url,
 		dataType: 'text',
