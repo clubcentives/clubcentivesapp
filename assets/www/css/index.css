@@ -1,0 +1,43 @@
+html, body 
+{
+	height:99.9%;
+}
+
+body, .ui-body-c, .ui-overlay-c 
+{
+	color:#666;
+	font-family:arial;	
+	background: #feffff;
+	background: -moz-linear-gradient(top,  #feffff 0%, #ffffff 20%, #d2ecf7 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(20%,#ffffff), color-stop(100%,#d2ecf7));
+	background: -webkit-linear-gradient(top,  #feffff 0%,#ffffff 20%,#d2ecf7 100%);
+	background: -o-linear-gradient(top,  #feffff 0%,#ffffff 20%,#d2ecf7 100%);
+	background: -ms-linear-gradient(top,  #feffff 0%,#ffffff 20%,#d2ecf7 100%);
+	background: linear-gradient(to bottom,  #feffff 0%,#ffffff 20%,#d2ecf7 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ecf7',GradientType=0 );
+}
+
+#app 
+{
+	position:relative;
+	top:40%;
+	text-align:center;
+	margin-top:-30px;
+}
+
+#app div 
+{
+	margin-bottom:27px;
+}
+
+#app div img
+{	
+	display:block;
+	margin:0 auto 2em auto;
+}
+
+#logo-image
+{
+	width:95%;
+	max-width:480px;
+}
