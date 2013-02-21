@@ -29,7 +29,7 @@ public class CLUBCentivesApp extends DroidGap
     {
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
-        //super.setIntegerProperty("splashscreen", R.drawable.splash);
+        //super.setIntegerProperty("splashscreen", R.drawable.splash);        
         super.loadUrl(Config.getStartUrl(), 3000);
         //super.loadUrl("file:///android_asset/www/index.html")
     }

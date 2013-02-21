@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<widget xmlns = "http://www.w3.org/ns/widgets"
+     xmlns:gap = "http://phonegap.com/ns/1.0"
+     id        = "com.clubcentives.clubcentivesapp"
+     versionCode="1" 
+     version   = "1.0.0">
+
+    <name>CLUBcentives</name>
+
+    <description>
+        Mobile features for Clubcentives(tm) members and business subscribers 
+    </description>
+
+    <author href="https://clubcentives.com" email="alerts@clubcentives.com">
+        CLUBCentives, LLC 
+    </author>
+    
+    <preference name="orientation" value="portrait" />
+
+    <preference name="permissions" value="none"/>
+    
+    <access origin="http://clubcentives.com" subdomains="true" />
+    <access origin="https://clubcentives.com" subdomains="true" />
+    
+</widget>
+
