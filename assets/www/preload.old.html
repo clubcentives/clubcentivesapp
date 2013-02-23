@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<link rel="stylesheet" type="text/css" href="https://clubcentives.com/css/jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.css" />
+	    <link rel="stylesheet" type="text/css" href="https://clubcentives.com/css/application.mobile.css" />
+	
+		<script type="text/javascript">
+	 		window['APPURL'] = 'https://clubcentives.com';
+		</script>
+		
+		<script type="text/javascript" src="https://clubcentives.com/js/jquery-1.8.3.js"></script>
+	    <script type="text/javascript" src="https://clubcentives.com/js/jquery-ui-1.9.2.custom.min.js" defer="true"></script>
+	    <script type="text/javascript" src="https://clubcentives.com/js/jquery.mobile-1.2.0.min.js" defer="true"></script>
+	    <script type="text/javascript" src="https://clubcentives.com/js/jquery-extensions.js" defer="true"></script>
+	    <script type="text/javascript" src="https://clubcentives.com/js/app.core.js" defer="true"></script>	    
+	</head>
+	<body>
+		<div style="display:none">
+		    <img src="https://clubcentives.com/img/header.clubcentives.full.png" />
+		    <img src="https://clubcentives.com/css/jquery.mobile-1.2.0/images/ajax-loader.gif" />
+		    <img src="https://clubcentives.com/img/icon.loading-star.gif" />
+		    <img src="https://clubcentives.com/css/jquery.mobile-1.2.0/images/icons-18-white.png" />
+		</div>
+			    	
+		<script type="text/javascript">
+			var initialized = false;
+			$(window).load(function() {
+				if (!initialized) {
+					window.parent.contentPreloadComplete();
+					initialized = true;
+				}
+			});		
+		</script>
+    </body>
+</html>
+		    
