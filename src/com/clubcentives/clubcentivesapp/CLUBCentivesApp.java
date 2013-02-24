@@ -21,6 +21,7 @@ package com.clubcentives.clubcentivesapp;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
+import android.graphics.Color;
 
 public class CLUBCentivesApp extends DroidGap
 {
@@ -28,10 +29,23 @@ public class CLUBCentivesApp extends DroidGap
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        
+    	// configure settings - see documentation: https://svn.apache.org/repos/asf/incubator/callback/phonegap-android/trunk/framework/src/com/phonegap/DroidGap.java
+        super.setIntegerProperty("backgroundColor", Color.WHITE);
+        super.setStringProperty("loadingDialog", "Loading page...");
+        super.setStringProperty("loadingPageDialog", "Loading page...");
+        super.setBooleanProperty("loadInWebView", true);
+        super.setStringProperty("errorUrl", "file:///android_asset/www/loaderror.html");
+        
         // Set by <content src="index.html" /> in config.xml
-        //super.setIntegerProperty("splashscreen", R.drawable.splash);        
-        super.loadUrl(Config.getStartUrl(), 3000);
+        //super.setIntegerProperty("splashscreen", R.drawable.splash); 
+        //super.loadUrl(Config.getStartUrl(), 3000);
         //super.loadUrl("file:///android_asset/www/index.html")
+        
+        // load the initial page
+        super.loadUrl("file:///android_asset/www/index.html", 2000);
+        
+
     }
 }
 

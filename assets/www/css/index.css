@@ -1,6 +1,11 @@
+*
+{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
 html, body 
 {
-	height:99.9%;
+	height:99.9%;	
 }
 
 body, .ui-body-c, .ui-overlay-c 
@@ -8,12 +13,12 @@ body, .ui-body-c, .ui-overlay-c
 	color:#666;
 	font-family:arial;
 	background: #feffff;
-	background: -moz-linear-gradient(top,  #feffff 0%, #9adbf4 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(100%,#9adbf4));
-	background: -webkit-linear-gradient(top,  #feffff 0%,#9adbf4 100%);
-	background: -o-linear-gradient(top,  #feffff 0%,#9adbf4 100%);
-	background: -ms-linear-gradient(top,  #feffff 0%,#9adbf4 100%);
-	background: linear-gradient(to bottom,  #feffff 0%,#9adbf4 100%);
+	background: -moz-linear-gradient(top,  #feffff 20%, #9adbf4 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,#feffff), color-stop(100%,#9adbf4));
+	background: -webkit-linear-gradient(top,  #feffff 20%,#9adbf4 100%);
+	background: -o-linear-gradient(top,  #feffff 20%,#9adbf4 100%);
+	background: -ms-linear-gradient(top,  #feffff 20%,#9adbf4 100%);
+	background: linear-gradient(to bottom,  #feffff 20%,#9adbf4 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#9adbf4',GradientType=0 );
 }
 
