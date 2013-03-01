@@ -81,7 +81,7 @@ function preloadComplete()
 			}, elapsed > (minsplasscreenseconds*1000) ? 0 : (minsplasscreenseconds*1000) - elapsed);            	
 		},
 		error: function(request, text) {
-			$('#app').html('<div>Unable not connect to the CLUBCentives server. Please ensure that your phone has Internet connectivity.</div>');
+			$('#app').html('<div>Unable to connect to the CLUBCentives server. Please ensure that your phone has Internet connectivity.</div>');
 		}
 	});
 };
