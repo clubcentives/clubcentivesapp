@@ -4,7 +4,7 @@
 var dopreload = true;
 var minsplasscreenseconds = 2;
 var maxsplasscreenseconds = 10;
-var gotourl = 'https://clubcentives.com/mobile';
+var gotourl = 'https://clubcentives.com/account/login?mobile=true&isapp=true&from=/mobile';
 var alreadycalled = false;
 var starttime = 0;
 
@@ -16,6 +16,14 @@ $(function(){
   // log our start time
   starttime = (new Date()).getTime();
 
+  // provide user credentials to the site if
+  var username = window.localStorage['username'];
+  var password = window.localStorage['password'];
+  if(username && password) {
+	gotourl += '&id='+encodeURIComponent(username)+'&password='+encodeURIComponent(password);  
+  }
+
+     
   if (dopreload) {
   
 	// dynamically create an iframe to preload the javascript files, css files, and images that we'll use on the first actual page of our app  
