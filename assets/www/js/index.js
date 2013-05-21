@@ -4,7 +4,7 @@
 var dopreload = true;
 var minsplasscreenseconds = 2;
 var maxsplasscreenseconds = 10;
-var gotourl = 'https://clubcentives.com/account/login?mobile=true&isapp=true&from=/mobile';
+var gotourl = 'https://clubcentives.com/mobile?isapp=true';
 var alreadycalled = false;
 var starttime = 0;
 
