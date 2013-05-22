@@ -4,7 +4,7 @@
 var dopreload = true;
 var minsplasscreenseconds = 2;
 var maxsplasscreenseconds = 10;
-var gotourl = 'https://clubcentives.com/mobile?isapp=true';
+var gotourl = 'https://clubcentives.com/account/login?isapp=true';
 var alreadycalled = false;
 var starttime = 0;
 
@@ -16,14 +16,12 @@ $(function(){
   // log our start time
   starttime = (new Date()).getTime();
 
-  // provide user credentials to the site if
-  var username = window.localStorage['username'];
-  var password = window.localStorage['password'];
-  if(username && password) {
-	gotourl += '&id='+encodeURIComponent(username)+'&password='+encodeURIComponent(password);  
+  // provide login key to the site if available
+  var mlkey = window.localStorage.getItem('mlkey');
+  if(mlkey) {
+	gotourl += '&mlkey='+mlkey;  
   }
-
-     
+	             
   if (dopreload) {
   
 	// dynamically create an iframe to preload the javascript files, css files, and images that we'll use on the first actual page of our app  
@@ -42,7 +40,6 @@ $(function(){
 	// tell the iframe to load the preload page, which will actually do the preloading on our behalf without causing the loading page to block (not display) while the preloading happens
 	window.setTimeout(function(){  
 	 var doc = iframe.contentWindow.document;
-	 //var html = '<body onload="window.location=\'preload.html\'"></body>';
 	 var html = '<body onload="window.location=\''+gotourl+'\'"></body>';
 	 doc.open();
 	 doc.write(html);
@@ -82,9 +79,22 @@ function preloadComplete()
 		timeout:8000,
 		success: function(html) {
 			var elapsed = (new Date()).getTime() - starttime;
-			window.setTimeout(function(){
-				document.open();
-			    document.write(html);
+			window.setTimeout(function(){				
+				// add code to save the mobile login key upon successful login
+				var idscript = '';
+				idscript += '<script type="text/javascript">';
+				idscript += '$(function(){';
+			
+				idscript += "$(window).on('onAfterLogin', function(e, response){";
+				idscript += "	localStorage.setItem('mlkey', response.mlkey);";
+				idscript += "});";
+				
+				idscript += '});';
+				idscript += '</script>';
+				html = html.replace('</body>', idscript+'</body>');
+				
+				document.open();				
+			    document.write(html);		    
 			    document.close();
 			}, elapsed > (minsplasscreenseconds*1000) ? 0 : (minsplasscreenseconds*1000) - elapsed);            	
 		},
