@@ -14,6 +14,8 @@
     <author href="https://clubcentives.com" email="alerts@clubcentives.com">
         CLUBCentives, LLC 
     </author>
+   
+    <preference name="phonegap-version" value="2.7.0" />
     
     <preference name="orientation" value="portrait" />
 
